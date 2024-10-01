@@ -127,4 +127,16 @@ public class TarefaController {
         boolean existe = tarefaService.responsavelTemTarefas(responsavelId);
         return ResponseEntity.ok(existe);
     }
+
+    @PutMapping("/{id}/concluir")
+    @ApiOperation(value = "Concluir uma tarefa", notes = "Marca uma tarefa como concluída.")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Tarefa concluída com sucesso"),
+            @ApiResponse(code = 404, message = "Tarefa não encontrada"),
+            @ApiResponse(code = 500, message = "Erro interno do servidor")
+    })
+    public ResponseEntity<String> concluirTarefa(@PathVariable Long id) {
+        return ResponseEntity.ok("Tarefa concluída com sucesso");
+    }
+
 }

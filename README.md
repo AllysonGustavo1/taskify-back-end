@@ -6,6 +6,7 @@
    * Segurança: A aplicação implementa autenticação e criptografia de senhas usando BCrypt.
    * Integração com o Banco de Dados: O projeto é configurado para se conectar a um banco de dados PostgreSQL, utilizando o Spring Data JPA para facilitar as operações de banco de dados.
    * Documentação com Swagger: O projeto utiliza Swagger para documentar as APIs.
+   * Hospedagem do Back-End: O back-end foi hospedado no [Render](https://render.com/).
 2. Como usar
    * Instalar o java jdk 11
    * Clonar o repositório

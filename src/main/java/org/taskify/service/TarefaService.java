@@ -87,4 +87,12 @@ public class TarefaService {
     public Tarefa getTarefaByUsuarioIdAndNumero(Integer usuarioId, Integer numero) {
         return tarefaRepository.findByUsuarioIdAndNumero(usuarioId, numero);
     }
+
+    public Tarefa concluirTarefa(Integer id) {
+        Tarefa tarefaExistente = tarefaRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Tarefa não encontrada"));
+        tarefaExistente.setSituacao("concluida");
+        return tarefaRepository.save(tarefaExistente);
+    }
+
 }
