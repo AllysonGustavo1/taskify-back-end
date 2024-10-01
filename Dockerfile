@@ -12,6 +12,6 @@ FROM adoptopenjdk/openjdk11:alpine
 
 EXPOSE 8080
 
-COPY --from=build /target/taskify.jar app.jar
+COPY --from=build /target/taskify-1.0-SNAPSHOT.jar app.jar
 
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
