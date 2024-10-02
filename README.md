@@ -1,3 +1,11 @@
+Letra B feita.
+Letra C feita.
+Letra D parcialmente feita.
+Letra E feita.
+Letra F feita.
+Letra G feita.
+Letra H feita.
+Letra I feita - Docker, endpoints, funções.
 1. O que foi feito
    * Estrutura de Entidades: Foi criada uma estrutura de entidades que inclui Usuarios, Responsaveis e Tarefas, representando os dados do sistema. As entidades têm relações apropriadas, como chaves estrangeiras.
    * Controladores REST: Foram implementados controladores REST para Usuario e Tarefa. Esses controladores gerenciam as operações CRUD e expõem endpoints que a aplicação front-end pode chamar.
