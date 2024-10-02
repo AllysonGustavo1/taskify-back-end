@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.taskify.entity.Tarefa;
 import org.taskify.service.TarefaService;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -135,8 +136,13 @@ public class TarefaController {
             @ApiResponse(code = 404, message = "Tarefa não encontrada"),
             @ApiResponse(code = 500, message = "Erro interno do servidor")
     })
-    public ResponseEntity<String> concluirTarefa(@PathVariable Long id) {
-        return ResponseEntity.ok("Tarefa concluída com sucesso");
+    public ResponseEntity<String> concluirTarefa(@PathVariable Integer id) {
+        try {
+            Tarefa tarefaConcluida = tarefaService.concluirTarefa(id);
+            return ResponseEntity.ok("Tarefa '" + tarefaConcluida.getTitulo() + "' concluída com sucesso");
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }
